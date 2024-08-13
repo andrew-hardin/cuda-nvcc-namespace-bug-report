@@ -18,7 +18,8 @@ namespace gpu {
   }
 
   // Kernel that uses the global ::Type.
-  // This won't compile, but is valid C.
+  // This won't compile, but it's valid C++.
+  // (e.g. remove the __global__ attribute and it'll compile just fine).
   __global__ void Fails(::Type t) {
     printf("%i", t.from_global_type);
   }
